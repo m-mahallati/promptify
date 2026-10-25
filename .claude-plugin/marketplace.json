@@ -1,0 +1,14 @@
+{
+  "name": "prompt-refiner",
+  "description": "Prompt Refiner for Claude Code.",
+  "owner": {
+    "name": "m-mahallati"
+  },
+  "plugins": [
+    {
+      "name": "prompt-refiner",
+      "source": "./",
+      "description": "Turn rough prompts into clear requests with context, constraints, and success criteria."
+    }
+  ]
+}

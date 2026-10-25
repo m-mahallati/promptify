@@ -6,6 +6,31 @@ It preserves your intent and constraints, adds relevant context and completion c
 
 ## Install
 
+### Claude Code plugin (recommended)
+
+Add this repository as a marketplace and install the plugin:
+
+```sh
+claude plugin marketplace add m-mahallati/prompt-refiner
+claude plugin install prompt-refiner@prompt-refiner
+```
+
+Inside a Claude Code session, use the equivalent slash commands:
+
+```text
+/plugin marketplace add m-mahallati/prompt-refiner
+/plugin install prompt-refiner@prompt-refiner
+```
+
+Start a new session after installation, then invoke the skill with
+`/prompt-refiner:prompt-refiner`. The repository contains both the marketplace
+catalog (`.claude-plugin/marketplace.json`) and plugin metadata
+(`.claude-plugin/plugin.json`); the catalog points at the plugin in this
+repository's root. This makes it installable from this marketplace; it does
+not imply a listing in Anthropic's official directory.
+
+### Codex or standalone Claude Code skill
+
 Clone this repository:
 
 ```sh
@@ -41,11 +66,14 @@ In Codex:
 $prompt-refiner Make this more precise: Fix the login bug where submitting an expired session shows a blank page. Keep the current auth flow.
 ```
 
-In Claude Code:
+In Claude Code when installed as a plugin:
 
 ```text
-/prompt-refiner Make this more precise: Fix the login bug where submitting an expired session shows a blank page. Keep the current auth flow.
+/prompt-refiner:prompt-refiner Make this more precise: Fix the login bug where submitting an expired session shows a blank page. Keep the current auth flow.
 ```
+
+For a standalone Claude Code skill copied manually into `.claude/skills`, use
+`/prompt-refiner` instead.
 
 Both assistants can also select the skill when you explicitly ask to improve a prompt in natural language.
 
@@ -73,6 +101,17 @@ If you supply “make it faster” with no context, the skill asks what should b
 ## Review and validation
 
 The skill is instruction-only. See [behavioral review cases](evals/cases.md) for realistic inputs and expected outcomes. These cases are a manual evaluation rubric, not a claim of automated behavioral test coverage. Model outputs and automatic selection can vary by assistant and version.
+
+Validate the Claude plugin and its marketplace catalog from the repository root:
+
+```sh
+claude plugin validate --strict .claude-plugin/plugin.json
+claude plugin validate --strict .claude-plugin/marketplace.json
+```
+
+When changing a published plugin, increment `version` in
+`.claude-plugin/plugin.json` so users can receive the new version through
+`claude plugin update prompt-refiner@prompt-refiner`.
 
 The package format and installation paths follow the official [Codex skill documentation](https://developers.openai.com/codex/skills/) and [Claude Code skill documentation](https://code.claude.com/docs/en/skills).
 
