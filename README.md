@@ -59,15 +59,15 @@ Copy the skill into the appropriate personal skills directory. These commands wo
 **Codex**
 
 ```sh
-mkdir -p "$HOME/.agents/skills"
-test ! -e "$HOME/.agents/skills/promptify" && cp -R skills/promptify "$HOME/.agents/skills/"
+mkdir -p ~/.agents/skills
+test ! -e ~/.agents/skills/promptify && cp -R skills/promptify ~/.agents/skills/
 ```
 
 **Claude Code**
 
 ```sh
-mkdir -p "$HOME/.claude/skills"
-test ! -e "$HOME/.claude/skills/promptify" && cp -R skills/promptify "$HOME/.claude/skills/"
+mkdir -p ~/.claude/skills
+test ! -e ~/.claude/skills/promptify && cp -R skills/promptify ~/.claude/skills/
 ```
 
 Start a new session after installation. For a repository-only install, copy `skills/promptify` into that project's `.agents/skills/` for Codex or `.claude/skills/` for Claude Code instead. Copy the whole skill folder, not the repository root. If a destination exists, review it before replacing or updating it.
@@ -129,12 +129,12 @@ claude plugin validate --strict .claude-plugin/plugin.json
 claude plugin validate --strict .claude-plugin/marketplace.json
 ```
 
-Check the Codex packaging by installing from a local checkout into a
-throwaway Codex home, which leaves your own configuration untouched:
+Check the Codex packaging by adding your local checkout as a marketplace and
+installing from it (this changes your Codex configuration; remove the
+marketplace afterwards with `codex plugin marketplace remove promptify`):
 
 ```sh
-export CODEX_HOME="$(mktemp -d)"
-codex plugin marketplace add "$PWD"
+codex plugin marketplace add ./
 codex plugin add promptify@promptify
 codex plugin list
 ```

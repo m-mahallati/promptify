@@ -8,7 +8,11 @@
   "homepage": "https://github.com/m-mahallati/promptify",
   "repository": "https://github.com/m-mahallati/promptify",
   "license": "MIT",
-  "keywords": ["prompting", "writing", "productivity"],
+  "keywords": [
+    "prompting",
+    "writing",
+    "productivity"
+  ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Promptify",
@@ -16,10 +20,14 @@
     "longDescription": "Turns rough prompts into clear, self-contained requests. It preserves your intent and constraints, adds relevant context and completion criteria, and asks focused questions when missing details would change the request. It refines prompts; it carries out the resulting task only if you also ask it to.",
     "developerName": "m-mahallati",
     "category": "Productivity",
-    "capabilities": ["Interactive"],
+    "capabilities": [
+      "Interactive"
+    ],
     "websiteURL": "https://github.com/m-mahallati/promptify",
     "defaultPrompt": [
       "Sharpen this prompt while preserving my intent:"
-    ]
+    ],
+    "logo": "./.claude-plugin/icon.png",
+    "composerIcon": "./.claude-plugin/icon.png"
   }
 }
