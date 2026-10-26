@@ -1,9 +1,9 @@
 ---
-name: prompt-refiner
+name: promptify
 description: Refine a supplied prompt into a clear, precise, self-contained request with relevant context, scope, constraints, and success criteria. Use when asked to improve, clarify, sharpen, or rewrite a prompt; ordinary requests to perform a task should not trigger prompt rewriting.
 ---
 
-# Prompt Refiner
+# Promptify
 
 Turn the user's rough prompt into a request that another assistant can act on accurately. Preserve the intended outcome and explain only what helps the recipient deliver it.
 

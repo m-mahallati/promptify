@@ -1,4 +1,0 @@
-interface:
-  display_name: "Prompt Refiner"
-  short_description: "Make prompts clear, precise, and actionable"
-  default_prompt: "Use $prompt-refiner to sharpen this prompt while preserving my intent:"

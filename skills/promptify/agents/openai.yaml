@@ -1,0 +1,4 @@
+interface:
+  display_name: "Promptify"
+  short_description: "Make prompts clear, precise, and actionable"
+  default_prompt: "Use $promptify to sharpen this prompt while preserving my intent:"

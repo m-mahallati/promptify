@@ -1,6 +1,6 @@
 # Behavioral review cases
 
-Run these in fresh conversations after installing the skill. Use `$prompt-refiner:prompt-refiner` in Codex or `/prompt-refiner:prompt-refiner` in Claude Code when installed as a plugin (`$prompt-refiner` or `/prompt-refiner` for a standalone copy) before each refinement request. Review meaning rather than exact wording. Record assistant/version and outputs when running an evaluation.
+Run these in fresh conversations after installing the skill. Use `$promptify:promptify` in Codex or `/promptify:promptify` in Claude Code when installed as a plugin (`$promptify` or `/promptify` for a standalone copy) before each refinement request. Review meaning rather than exact wording. Record assistant/version and outputs when running an evaluation.
 
 These are review cases, not previously executed model benchmarks. A package validator cannot verify these behaviors.
 
@@ -15,7 +15,7 @@ These are review cases, not previously executed model benchmarks. A package vali
 | Already precise | Refine, only the prompt: Translate “Good morning” into French. Return only the translation. | Keeps the translation request concise and preserves its output constraint; does not output the translation itself. |
 | Noncoding task | Refine: Draft a friendly email to my landlord asking to repair the leaking kitchen tap this week. Keep it under 120 words. | Preserves audience, tone, issue, timing, and word limit without inventing names or legal claims. |
 | Language | این پرامپت را دقیق‌تر کن: برای یک دانش‌آموز ۱۲ ساله چرخه آب را در ۱۰۰ کلمه توضیح بده. | Produces a Persian prompt preserving the age and word count, with no unsolicited switch to English. |
-| Missing input | Use prompt-refiner. | Asks for the prompt; does not invent one. |
+| Missing input | Use promptify. | Asks for the prompt; does not invent one. |
 | Context transfer | Earlier message: “The target is the Android checkout screen.” Then: Refine: Fix its crash on tapping Pay; keep the layout. | Names the Android checkout screen, preserves the layout, and adds no invented crash cause. |
 | Exact output | Refine: Summarize the attached report in JSON with keys summary and risks. The recipient will have the attachment. | Preserves the JSON keys, names the required attachment, and does not claim to have read it. |
 

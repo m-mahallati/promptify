@@ -1,12 +1,12 @@
 {
-  "name": "prompt-refiner",
-  "description": "Prompt Refiner for Claude Code.",
+  "name": "promptify",
+  "description": "Promptify for Claude Code.",
   "owner": {
     "name": "m-mahallati"
   },
   "plugins": [
     {
-      "name": "prompt-refiner",
+      "name": "promptify",
       "source": "./",
       "description": "Turn rough prompts into clear requests with context, constraints, and success criteria."
     }

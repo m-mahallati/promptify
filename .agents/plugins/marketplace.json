@@ -1,11 +1,11 @@
 {
-  "name": "prompt-refiner",
+  "name": "promptify",
   "interface": {
-    "displayName": "Prompt Refiner"
+    "displayName": "Promptify"
   },
   "plugins": [
     {
-      "name": "prompt-refiner",
+      "name": "promptify",
       "source": {
         "source": "local",
         "path": "./"

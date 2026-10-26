@@ -1,13 +1,13 @@
 {
-  "name": "prompt-refiner",
-  "displayName": "Prompt Refiner",
+  "name": "promptify",
+  "displayName": "Promptify",
   "version": "1.0.0",
   "description": "Turn rough prompts into clear requests with context, constraints, and success criteria.",
   "author": {
     "name": "m-mahallati"
   },
-  "homepage": "https://github.com/m-mahallati/prompt-refiner",
-  "repository": "https://github.com/m-mahallati/prompt-refiner",
+  "homepage": "https://github.com/m-mahallati/promptify",
+  "repository": "https://github.com/m-mahallati/promptify",
   "license": "MIT",
   "keywords": ["prompting", "writing", "productivity"]
 }

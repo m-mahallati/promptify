@@ -1,23 +1,23 @@
 {
-  "name": "prompt-refiner",
+  "name": "promptify",
   "version": "1.0.0",
   "description": "Turn rough prompts into clear requests with context, constraints, and success criteria.",
   "author": {
     "name": "m-mahallati"
   },
-  "homepage": "https://github.com/m-mahallati/prompt-refiner",
-  "repository": "https://github.com/m-mahallati/prompt-refiner",
+  "homepage": "https://github.com/m-mahallati/promptify",
+  "repository": "https://github.com/m-mahallati/promptify",
   "license": "MIT",
   "keywords": ["prompting", "writing", "productivity"],
   "skills": "./skills/",
   "interface": {
-    "displayName": "Prompt Refiner",
+    "displayName": "Promptify",
     "shortDescription": "Make prompts clear, precise, and actionable",
     "longDescription": "Turns rough prompts into clear, self-contained requests. It preserves your intent and constraints, adds relevant context and completion criteria, and asks focused questions when missing details would change the request. It refines prompts; it carries out the resulting task only if you also ask it to.",
     "developerName": "m-mahallati",
     "category": "Productivity",
     "capabilities": ["Interactive"],
-    "websiteURL": "https://github.com/m-mahallati/prompt-refiner",
+    "websiteURL": "https://github.com/m-mahallati/promptify",
     "defaultPrompt": [
       "Sharpen this prompt while preserving my intent:"
     ]
