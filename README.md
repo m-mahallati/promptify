@@ -114,6 +114,10 @@ Useful instructions to append:
 
 If you supply “make it faster” with no context, the skill asks what should be faster and what result you need. It does not invent a target, benchmark, or technology stack.
 
+## Privacy and data
+
+Promptify is instructions only: one `SKILL.md` that tells the assistant how to rewrite a prompt. It contains no code, scripts, hooks, commands, agents, or MCP servers. It runs nothing, makes no network requests, reads no files or credentials on its own, and stores or sends no data anywhere. The prompt you supply is handled by your assistant (Claude or Codex) like any other message, under that assistant's own terms and data policy.
+
 ## Review and validation
 
 The skill is instruction-only. See [behavioral review cases](evals/cases.md) for realistic inputs and expected outcomes. These cases are a manual evaluation rubric, not a claim of automated behavioral test coverage. Model outputs and automatic selection can vary by assistant and version.
