@@ -1,6 +1,6 @@
 # Behavioral review cases
 
-Run these in fresh conversations after installing the skill. Use `$prompt-refiner` in Codex or `/prompt-refiner` in Claude Code before each refinement request. Review meaning rather than exact wording. Record assistant/version and outputs when running an evaluation.
+Run these in fresh conversations after installing the skill. Use `$prompt-refiner:prompt-refiner` in Codex or `/prompt-refiner:prompt-refiner` in Claude Code when installed as a plugin (`$prompt-refiner` or `/prompt-refiner` for a standalone copy) before each refinement request. Review meaning rather than exact wording. Record assistant/version and outputs when running an evaluation.
 
 These are review cases, not previously executed model benchmarks. A package validator cannot verify these behaviors.
 

@@ -29,7 +29,23 @@ catalog (`.claude-plugin/marketplace.json`) and plugin metadata
 repository's root. This makes it installable from this marketplace; it does
 not imply a listing in Anthropic's official directory.
 
-### Codex or standalone Claude Code skill
+### Codex plugin (recommended)
+
+Add this repository as a marketplace and install the plugin:
+
+```sh
+codex plugin marketplace add m-mahallati/prompt-refiner
+codex plugin add prompt-refiner@prompt-refiner
+```
+
+Start a new session after installation, then invoke the skill with
+`$prompt-refiner:prompt-refiner`. The Codex catalog is
+`.agents/plugins/marketplace.json` and the plugin manifest is
+`.codex-plugin/plugin.json`; both point at the same `skills/` folder the Claude
+plugin uses. Get a later version with
+`codex plugin marketplace upgrade prompt-refiner`.
+
+### Standalone skill (Codex or Claude Code)
 
 Clone this repository:
 
@@ -56,14 +72,14 @@ test ! -e "$HOME/.claude/skills/prompt-refiner" && cp -R skills/prompt-refiner "
 
 Start a new session after installation. For a repository-only install, copy `skills/prompt-refiner` into that project's `.agents/skills/` for Codex or `.claude/skills/` for Claude Code instead. Copy the whole skill folder, not the repository root. If a destination exists, review it before replacing or updating it.
 
-The shared `SKILL.md` uses the common name/description frontmatter. `agents/openai.yaml` supplies optional Codex UI metadata; Claude Code uses `SKILL.md`. No API keys, dependencies, hooks, or MCP servers are required by this skill; your coding assistant still needs its normal setup.
+The shared `SKILL.md` uses the common name/description frontmatter. `agents/openai.yaml` supplies optional Codex UI metadata; Claude Code uses `SKILL.md`. If you also install the plugin, remove the standalone copy so the skill is not listed twice. No API keys, dependencies, hooks, or MCP servers are required by this skill; your coding assistant still needs its normal setup.
 
 ## Use
 
-In Codex:
+In Codex when installed as a plugin:
 
 ```text
-$prompt-refiner Make this more precise: Fix the login bug where submitting an expired session shows a blank page. Keep the current auth flow.
+$prompt-refiner:prompt-refiner Make this more precise: Fix the login bug where submitting an expired session shows a blank page. Keep the current auth flow.
 ```
 
 In Claude Code when installed as a plugin:
@@ -72,8 +88,8 @@ In Claude Code when installed as a plugin:
 /prompt-refiner:prompt-refiner Make this more precise: Fix the login bug where submitting an expired session shows a blank page. Keep the current auth flow.
 ```
 
-For a standalone Claude Code skill copied manually into `.claude/skills`, use
-`/prompt-refiner` instead.
+For a standalone skill copied manually, use `$prompt-refiner` in Codex or
+`/prompt-refiner` in Claude Code instead.
 
 Both assistants can also select the skill when you explicitly ask to improve a prompt in natural language.
 
@@ -109,9 +125,21 @@ claude plugin validate --strict .claude-plugin/plugin.json
 claude plugin validate --strict .claude-plugin/marketplace.json
 ```
 
-When changing a published plugin, increment `version` in
-`.claude-plugin/plugin.json` so users can receive the new version through
-`claude plugin update prompt-refiner@prompt-refiner`.
+Check the Codex packaging by installing from a local checkout into a
+throwaway Codex home, which leaves your own configuration untouched:
+
+```sh
+export CODEX_HOME="$(mktemp -d)"
+codex plugin marketplace add "$PWD"
+codex plugin add prompt-refiner@prompt-refiner
+codex plugin list
+```
+
+When changing the published plugin, increment `version` in both
+`.claude-plugin/plugin.json` and `.codex-plugin/plugin.json` (keep them equal)
+so users can receive the new version through
+`claude plugin update prompt-refiner@prompt-refiner` or
+`codex plugin marketplace upgrade prompt-refiner`.
 
 The package format and installation paths follow the official [Codex skill documentation](https://developers.openai.com/codex/skills/) and [Claude Code skill documentation](https://code.claude.com/docs/en/skills).
 
